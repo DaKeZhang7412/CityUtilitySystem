@@ -8,6 +8,26 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
+    'vue/setup-compiler-macros': true
+  },
+  extends: ['plugin:vue/recommended', 'eslint:recommended'],
+
+  // add your custom rules here
+  //it is base on https://github.com/vuejs/eslint-config-vue
+  rules: {
+    'vue/first-attribute-linebreak': [2, {
+      // 单行时，第一属性前不允许使用换行符
+      singleline: 'beside',
+      // 多行时，第一属性前必须使用换行符
+      multiline: 'below',
+    }],
+    "vue/max-attributes-per-line": [2, {
+      "singleline":  10,
+      "multiline": {
+        "max": 1,
+        //"allowFirstLine": false
+      }
+    }],
   },
   extends: ['plugin:vue/recommended', 'eslint:recommended'],
 
@@ -18,7 +38,7 @@ module.exports = {
       "singleline": 10,
       "multiline": {
         "max": 1,
-        "allowFirstLine": false
+        //"allowFirstLine": false
       }
     }],
     "vue/singleline-html-element-content-newline": "off",

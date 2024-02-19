@@ -24,14 +24,16 @@
       let base = +new Date(2000, 9, 3);
       let oneDay = 24 * 3600 * 1000;
 
+      // define the chart width.
       let data = [
         [base, Math.random() * 300]
       ];
 
-      for (let i = 1; i < 20000; i++) {
-        let now = new Date((base += oneDay));
-        data.push([+now, Math.round((Math.random() - 0.5) * 20 + data[i - 1][1])]);
-      }
+      //Fetching Data from source 这里插入数据
+      // for (let i = 1; i < 20000; i++) {
+      //   let now = new Date((base += oneDay));
+      //   data.push([+now, Math.round((Math.random() - 0.5) * 20 + data[i - 1][1])]);
+      // }
 
       option = {
         tooltip: {
